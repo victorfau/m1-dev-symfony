@@ -3,8 +3,11 @@
 {% block title %}Category index{% endblock %}
 
 {% block content %}
-    <div class="col-12">
+    <div class="col-6">
         <h2>{{ titre }}</h2>
+    </div>
+    <div class="col-6">
+        <a class="btn btn-primary" href="{{ url('admin_oeuvres') }}">Ajouter une oeuvre</a>
     </div>
 
     {% for item in oeuvres %}

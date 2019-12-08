@@ -108,4 +108,11 @@ class BlogController extends AbstractController {
         }
         return $this->render('blog/contact.html.twig', ['form' => $form->createView()]);
     }
+
+    /**
+     * @Route("/mentions-legales", name="blog_mention_legal")
+     */
+    public function mention(){
+        return $this->render('Blog/mentions.html.twig');
+    }
 }
