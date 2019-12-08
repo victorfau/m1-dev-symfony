@@ -1,0 +1,22 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Category index{% endblock %}
+
+{% block content %}
+
+    <div class="col-12">
+        <h1>Oeuvres</h1>
+    </div>
+    {% for oeuvre in oeuvres %}
+        <div class="col-4">
+            <div class="card">
+                <img class="card-img-top" src="{{ oeuvre.image }}" alt="une image">
+                <div class="card-body">
+                    <h5 class="card-title">{{ oeuvre.name }}</h5>
+                    <p class="card-text">{{ oeuvre.description }}</p>
+                    <a class="btn btn-primary" href="{{ url('Blog_index') }}">Accueil</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Category index{% endblock %}
+
+{% block content %}
+Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    Aut hic in maiores quidem ullam vitae voluptate.
+    Enim iure iusto non numquam. Accusantium cum dolores est impedit inventore ipsam nobis sequi.
+
+    <style>
+        .carousel{
+            width: 100%;
+        }
+        .carousel .carousel-item {
+            height: 300px;
+        }
+
+        .item img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            min-height: 300px;
+        }
+    </style>
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="{{ oeuvres.0.image }}" alt="First slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="{{ oeuvres.1.image }}" alt="Second slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="{{ oeuvres.2.image }}" alt="Third slide">
+            </div>
+        </div>
+
+{% endblock %}

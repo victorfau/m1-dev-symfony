@@ -1,0 +1,21 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Category index{% endblock %}
+
+{% block content %}
+    <div class="col-12">
+        <h2>{{ titre }}</h2>
+    </div>
+
+    {% for item in oeuvres %}
+        <div class="col-6 mt-5">
+            <img src="{{ item.image }}" alt="">
+        </div>
+        <div class="col-6 mt-5">
+            <h6>{{ item.name }}</h6>
+            <p>{{ item.description }}</p>
+            <p>lorem</p>
+        </div>
+    {% endfor %}
+
+{% endblock %}
