@@ -75,10 +75,9 @@ class BlogController extends AbstractController {
     public function expo (ExpoRepository $expoRepository){
 
         $expos = $expoRepository->findAfterNow();
-        dd($expos);
 
         return $this->render('Blog/expo.html.twig', [
-
+            'expos' => $expos
         ]);
     }
 }

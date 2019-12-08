@@ -1,0 +1,30 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Les expos{% endblock %}
+
+{% block content %}
+    <div class="mb-5" style="width: 100%">
+        <h1>Mes expos</h1>
+        <hr style="width: 100%"/>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">nom</th>
+                <th scope="col">ville</th>
+                <th scope="col">date début</th>
+                <th scope="col">date fin</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for item in expos %}
+            <tr>
+                <td>{{ item.name }}</td>
+                <td>{{ item.localisation }}</td>
+                <td>{{ item.date|date("m/d/Y") }}</td>
+                <td>{{ item.dateFin|date("m/d/Y") }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
