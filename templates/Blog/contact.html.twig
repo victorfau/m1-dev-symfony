@@ -1,0 +1,12 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Nous contacter{% endblock %}
+
+{% block content %}
+
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button class="btn btn-primary">{{ button_label|default('Nous contacter') }}</button>
+    {{ form_end(form) }}
+{% endblock %}

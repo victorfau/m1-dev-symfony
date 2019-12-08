@@ -14,7 +14,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ oeuvre.name }}</h5>
                     <p class="card-text">{{ oeuvre.description }}</p>
-                    <a class="btn btn-primary" href="{{ url('Blog_index') }}">Accueil</a>
+                    <a class="btn btn-primary" href="{{ url('blog_view', {'id': oeuvre.id}) }}">Voir</a>
                 </div>
             </div>
         </div>

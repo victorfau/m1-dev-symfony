@@ -7,6 +7,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Contact;
+use App\Form\ContactType;
 use App\Repository\ExpoRepository;
 use Symfony\Component\Routing\Annotation\Route, App\Repository\OeuvreRepository, Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
@@ -91,5 +93,19 @@ class BlogController extends AbstractController {
         $oeuvre = $oeuvreRepository->find($id);
         return $this->render('blog/view.html.twig', ['oeuvre' => $oeuvre]);
 
+    }
+
+    /**
+     * @Route("/contact", name="blog_contact")
+     */
+    public function contact(ContactType $contactType){
+        $contact = new Contact();
+        $form = $this->createForm(ContactType::class, $contact);
+        if($form->isSubmitted() && $form->isValid()){
+            unset($oeuvre, $form);
+            $entity = new Contact();
+            $form = $this->createForm(ContactType::class, $entity);
+        }
+        return $this->render('blog/contact.html.twig', ['form' => $form->createView()]);
     }
 }
