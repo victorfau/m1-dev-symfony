@@ -1,0 +1,18 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Category index{% endblock %}
+
+{% block content %}
+    <div class="w-100 mb-5">
+        <h1>{{ oeuvre.name }}</h1>
+        <hr class="w-100">
+    </div>
+    <div class="col-6">
+        <img src="{{ oeuvre.image }}" alt="">
+    </div>
+    <div class="col-6">
+        <p>{{ oeuvre.description }}</p>
+        <hr class="w-100 mt-2 mb-2 " />
+        <p>{{ oeuvre.type.name }}</p>
+    </div>
+{% endblock %}

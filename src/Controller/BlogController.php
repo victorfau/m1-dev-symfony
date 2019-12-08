@@ -80,4 +80,16 @@ class BlogController extends AbstractController {
             'expos' => $expos
         ]);
     }
+
+    /**
+     * @Route("/view/{id}", name="blog_view")
+     * @param int              $id
+     * @param OeuvreRepository $oeuvreRepository
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function view (int $id, OeuvreRepository $oeuvreRepository){
+        $oeuvre = $oeuvreRepository->find($id);
+        return $this->render('blog/view.html.twig', ['oeuvre' => $oeuvre]);
+
+    }
 }
