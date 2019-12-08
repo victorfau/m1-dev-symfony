@@ -27,13 +27,13 @@ class Expo
     private $localisation;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="integer", length=20)
      */
     private $date;
 
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="integer", length=20)
      */
     private $dateFin;
 

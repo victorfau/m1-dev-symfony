@@ -25,11 +25,8 @@ class ExpoRepository extends ServiceEntityRepository
 
     public function findAfterNow()
     {
-        $date = date('Y-m-d');
-        dd($this->createQueryBuilder('e')
-            ->andWhere("e.date >= $date")
-            ->orderBy('e.id', 'ASC')
-            ->getQuery());
+        $date = strtotime(date('Y-m-d'));
+
         return $this->createQueryBuilder('e')
             ->andWhere("e.date >= $date")
             ->orderBy('e.id', 'ASC')
